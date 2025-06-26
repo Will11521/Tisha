@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #a170ff, #ffb6f9);
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.section {
+  padding: 3rem 2rem;
+  position: relative;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffecff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.message {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease forwards;
+  position: relative;
+}
+
+.message::before,
+.message::after {
+  content: '✨';
+  position: absolute;
+  font-size: 2rem;
+}
+
+.message::before {
+  top: -15px;
+  left: -15px;
+}
+
+.message::after {
+  bottom: -15px;
+  right: -15px;
+}
+
+.fade-in.delay-1 { animation-delay: 0.5s; }
+.fade-in.delay-2 { animation-delay: 1.5s; }
+.fade-in.delay-3 { animation-delay: 3s; }
+.fade-in.delay-4 { animation-delay: 0.2s; }
+.fade-in.delay-5 { animation-delay: 0.4s; }
+.fade-in.delay-6 { animation-delay: 0.6s; }
+.fade-in.delay-7 { animation-delay: 0.8s; }
+.fade-in.delay-8 { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gifts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-in-out both;
+}
+
+.gift {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 250px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.gift:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.gift img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.gift p {
+  color: #ffe5fc;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #fff;
+}
+
+.gift-content {
+  margin-top: 1rem;
+}
+
+.gift-content img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+@keyframes fadeInGift {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery img {
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: rotate(var(--rotate, -2deg));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatIn 1s ease-out forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.gallery img:nth-child(even) {
+  --rotate: 2deg;
+}
+
+.gallery img:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 2;
+  box-shadow: 0 15px 25px rgba(161, 112, 255, 0.4);
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: rotate(var(--rotate, -2deg)) translateY(0);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/44/Heart_coraz%C3%B3n.svg') no-repeat center/contain;
+  animation: float 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.led-string {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: -60px;
+  z-index: 0;
+}
+
+.led-wire {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 50px;
+  background: transparent;
+  border-top: 2px dashed #aaa;
+  border-radius: 50%;
+}
+
+.bulb {
+  position: absolute;
+  top: 42px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ff4fc8;
+  box-shadow: 0 0 10px #ff4fc8;
+  animation: flicker 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; box-shadow: 0 0 5px #ff4fc8; }
+  50% { opacity: 0.6; box-shadow: 0 0 15px #ff4fc8; }
+  100% { opacity: 1; box-shadow: 0 0 10px #ff4fc8; }
+}
+
+audio {
+  display: none;
+}

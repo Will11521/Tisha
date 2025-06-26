@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Magic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🔈 Background Music (Plays Once) -->
+  <audio id="bg-music" autoplay preload="auto">
+    <source src="music/128-Kabhi Kabhi Aditi Zindagi - Jaane Tu.. Ya Jaane Na 128 Kbps_01.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- 💌 Messages Section -->
+  <section class="section">
+    <h2>Letters From the Heart</h2>
+
+    <div class="message fade-in delay-1">
+      <strong>Gunika:</strong><br>
+      “Happy Birthday babyyyy! Thank you for being my partner in crime, chaos, and late-night snack raids.
+      May your birthday be as awesome, weird, and unforgettable as our convos at 2 a.m.
+      You are the one who turned four walls into a home.
+      To the person who knows all my quirks and still chooses to live with me... I could not have asked for a better friend and roommate.
+      The best gift Chandigarh gave me is your friendship.
+      Loads and tons of love to you.”
+    </div>
+
+    <div class="message fade-in delay-2">
+      <strong>Sejal:</strong><br>
+      “Happy birthday Tishu baby 💗
+      Without your presence, I genuinely don't think I could've survived a single day here.
+      You are more than just a friend — you’re family, a great advisor, and of course the strongest girl I have ever met.”
+    </div>
+
+    <div class="message fade-in delay-3">
+      <strong>William:</strong><br>
+      “Tisha, there are some people who shine so bright, you forget what darkness feels like.
+      That’s you.
+      Every moment we’ve shared — the chaos, the calm, the weirdness — it’s part of the best timeline experienced.
+
+      ‘Kuch logon ke sath sirf waqt bitane se sab kuch sahi ho jata hai.’
+
+      Trying hard to be the ‘Bunny’ to your ‘Aditi’ (reference samajh lio 😉).
+      — Ab meri taraf se, Ofc 😉”
+    </div>
+  </section>
+
+  <!-- 🎁 Gift Section -->
+  <section class="section">
+    <h2>Unwrap the Magic</h2>
+    <div class="gifts">
+      <div class="gift" onclick="revealGift('Giva')">
+        <img class="wrapped" src="images/gift-wrap.jpg" alt="Wrapped Giva">
+        <div class="gift-content" style="display: none;">
+          <img src="images/giva.webp" alt="Giva Gift">
+          <p>✨ Gift Incoming... ask your friend to hand it over!</p>
+        </div>
+      </div>
+
+      <div class="gift" onclick="revealGift('Salty')">
+        <img class="wrapped" src="images/gift-wrap.jpg" alt="Wrapped Salty">
+        <div class="gift-content" style="display: none;">
+          <img src="images/salty.png" alt="Salty Gift">
+          <p>🎁 Gift on the way... Go check now!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💡 LED String -->
+  <div class="led-string"></div>
+
+  <!-- 📸 Photo Gallery -->
+  <section class="section wall">
+    <h2>Tisha's Best Angles 😌</h2>
+    <div class="gallery">
+      <img src="images/IMG_8288.JPG" alt="Tisha Selfie 1" class="fade-in delay-4">
+      <img src="images/IMG_8297.jpeg" alt="Tisha Mirror Pic" class="fade-in delay-5">
+      <img src="images/IMG_8295.jpeg" alt="Tisha Red Sweater" class="fade-in delay-6">
+      <img src="images/IMG_8293.JPG" alt="Tisha Green Shirt" class="fade-in delay-7">
+      <img src="images/IMG_8296.jpeg" alt="Tisha Restaurant" class="fade-in delay-8">
+    </div>
+
+    <!-- ✨ Floating sparkles -->
+    <div class="sparkle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="sparkle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 90%; animation-delay: 3s;"></div>
+  </section>
+
+  <!-- 🔧 JS -->
+  <script src="script.js"></script>
+</body>
+</html>
