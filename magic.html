@@ -35,39 +35,33 @@
     </div>
 
     <div class="message fade-in delay-3">
-      <strong>  — Ab meri taraf se, Ofc 😉”</strong><br>
+      <strong>— Ab meri taraf se, Ofc 😉</strong><br>
       “Tisha, there are some people who shine so bright, you forget what darkness feels like.
       That’s you.
       Every moment we’ve shared — the chaos, the calm, the weirdness — it’s part of the best timeline experienced.
 
       ‘Kuch logon ke sath sirf waqt bitane se sab kuch sahi ho jata hai.’
 
-      Trying hard to be the ‘Bunny’ to your ‘Aditi’ (reference samajh lio 😉).
-    
+      Trying hard to be the ‘Bunny’ to your ‘Aditi’ (reference samajh lio 😉).”
     </div>
   </section>
 
   <!-- 🎁 Gift Section -->
   <section class="section">
-    <h2>Unwrap the Magic</h2>
-    <div class="gifts">
-      <div class="gift" onclick="revealGift('Giva')">
-        <img class="wrapped" src="images/gift-wrap.jpg" alt="Wrapped Giva">
+    <h2>🎀 Your Spellbound Surprise</h2>
+    <div class="gifts magical-center">
+      <div class="gift enchanted" onclick="revealGift('Giva')">
+        <img class="wrapped pulse-glow" src="images/gift-wrap.jpg" alt="Wrapped Giva">
         <div class="gift-content" style="display: none;">
-          <img src="images/giva.webp" alt="Giva Gift">
-          <p>✨ Gift Incoming... ask your friend to hand it over!</p>
-        </div>
-      </div>
-
-      <div class="gift" onclick="revealGift('Salty')">
-        <img class="wrapped" src="images/gift-wrap.jpg" alt="Wrapped Salty">
-        <div class="gift-content" style="display: none;">
-          <img src="images/salty.png" alt="Salty Gift">
-          <p>🎁 Gift on the way... Go check now!</p>
+          <img src="images/giva.webp" alt="Giva Gift" class="sparkling-reveal">
+          <p>✨ The universe conspired, and *this* made its way to you. Happy Birthday, Enchantress.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- 🎊 Confetti Container -->
+  <div class="confetti-wrapper" id="confetti-wrapper"></div>
 
   <!-- 💡 LED String -->
   <div class="led-string"></div>
@@ -92,6 +86,33 @@
   </section>
 
   <!-- 🔧 JS -->
-  <script src="script.js"></script>
+  <script>
+    function revealGift(name) {
+      const gift = document.querySelector(`.gift.enchanted`);
+      const wrapped = gift.querySelector('.wrapped');
+      const content = gift.querySelector('.gift-content');
+      wrapped.style.display = 'none';
+      content.style.display = 'block';
+      launchConfetti();
+    }
+
+    function launchConfetti() {
+      const wrapper = document.getElementById("confetti-wrapper");
+      wrapper.innerHTML = ''; // clear any old confetti
+      for (let i = 0; i < 60; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "%";
+        confetti.style.animationDelay = (Math.random() * 1) + "s";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        wrapper.appendChild(confetti);
+      }
+
+      // Remove confetti after 3s
+      setTimeout(() => {
+        wrapper.innerHTML = '';
+      }, 3000);
+    }
+  </script>
 </body>
 </html>

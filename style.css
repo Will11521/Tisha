@@ -259,3 +259,82 @@ body::after {
 audio {
   display: none;
 }
+.magical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gift.enchanted {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gift.enchanted:hover {
+  transform: scale(1.05);
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+  }
+}
+
+.sparkling-reveal {
+  animation: fadeInSparkles 1.5s ease forwards;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeInSparkles {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: brightness(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+.confetti-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 14px;
+  opacity: 0.9;
+  animation: fall 3s ease-out forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
